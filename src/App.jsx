@@ -60,7 +60,7 @@ function App() {
     // localStorage.removeItem("savedNotes");
     localStorage.clear();
   }, [isListening]);
-  //Handel Translation
+  //Handel Translations
   useEffect(() => {
     // console.log(selectedLanguage);
     const translate = async () => {
