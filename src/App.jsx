@@ -60,7 +60,7 @@ function App() {
     // localStorage.removeItem("savedNotes");
     localStorage.clear();
   }, [isListening]);
-  //Handel Translation
+  //Handel Translations
   useEffect(() => {
     // console.log(selectedLanguage);
     const translate = async () => {
@@ -238,6 +238,7 @@ function App() {
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Write your note..."
+                  maxLength={300}
                 ></Input>
 
                 <div className="d-flex justify-content-end me-auto gap-2">
