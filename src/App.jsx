@@ -238,6 +238,7 @@ function App() {
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   placeholder="Write your note..."
+                  maxLength={300}
                 ></Input>
 
                 <div className="d-flex justify-content-end me-auto gap-2">
