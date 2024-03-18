@@ -102,6 +102,8 @@ function App() {
         response && setLoading(false);
         setTranslated(response.data.data.translatedText);
       } catch (error) {
+        setLoading(false);
+        setTranslated("Please try again after sometime");
         console.error(error.response);
       }
     };
