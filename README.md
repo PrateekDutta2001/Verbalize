@@ -6,7 +6,7 @@ Verbalize is a web-based application offering professional-grade speech recognit
 
 Version 2.0
 
-1. Download Saved Notes: Users can now conveniently download their saved notes for offline access and storage.
+1. Download Notes: Users can now conveniently download their saved notes and translated notes for offline access and storage.
 
 2. Language Translation: Verbalize introduces multilingual support for seamless translation of transcribed text, catering to diverse language preferences and global users.
 
