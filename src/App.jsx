@@ -187,21 +187,24 @@ function App() {
   };
 
   const handleDownload = () => {
-    const element = document.createElement("a");
-    const file = new Blob(
-      [
-        translateText(
-          localStorage.getItem("savedNotes") || localStorage.getItem("text"),
-          selectedLanguage
-        ),
-      ],
-      { type: "text/plain" }
+    const savedNote = localStorage.getItem("savedNotes");
+    const textToDownload = translateText(
+      savedNote || localStorage.getItem("text"),
+      selectedLanguage
     );
+  
+    const translatedTextToDownload = translated || "Translated Text Unavailable";
+  
+    const combinedText = `Saved Note:\n${savedNote}\n\nTranslated Text:\n${translatedTextToDownload}`;
+  
+    const element = document.createElement("a");
+    const file = new Blob([combinedText], { type: "text/plain" });
     element.href = URL.createObjectURL(file);
-    element.download = "saved_notes.txt";
-    document.body.appendChild(element); // Required for this to work in FireFox
+    element.download = "notes.txt";
+    document.body.appendChild(element);
     element.click();
   };
+  
 
   return (
     <>
@@ -388,7 +391,7 @@ function App() {
               Disclaimer: This product is designed for everyday tasks and
               ensures user privacy by not collecting or storing any personal
               information or data. Users can input text or speech in English and
-              optionally translate the results into their preferred language.
+              optionally translate the results into their preferred language. Furthermore, to enhance user experience and streamline interactions, user can enter upto 300 characters per input. This restriction ensures efficient processing while maintaining the integrity of the service.
             </Alert>
             <Button
               color="primary"
