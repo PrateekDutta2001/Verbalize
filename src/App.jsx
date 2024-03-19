@@ -188,14 +188,10 @@ function App() {
 
   const handleDownload = () => {
     const savedNote = localStorage.getItem("savedNotes");
-    const textToDownload = translateText(
-      savedNote || localStorage.getItem("text"),
-      selectedLanguage
-    );
+    const savedText = translateText(savedNote || localStorage.getItem("text"), selectedLanguage);
+    const translatedText = translated || "Translated Text Unavailable";
   
-    const translatedTextToDownload = translated || "Translated Text Unavailable";
-  
-    const combinedText = `Saved Note:\n${savedNote}\n\nTranslated Text:\n${translatedTextToDownload}`;
+    const combinedText = `Saved Text:\n${savedText}\n\nTranslated Text:\n${translatedText}`;
   
     const element = document.createElement("a");
     const file = new Blob([combinedText], { type: "text/plain" });
@@ -203,8 +199,7 @@ function App() {
     element.download = "notes.txt";
     document.body.appendChild(element);
     element.click();
-  };
-  
+  }; 
 
   return (
     <>
