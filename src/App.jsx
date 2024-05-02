@@ -396,6 +396,9 @@ function App() {
             >
               Give Feedback
             </Button>
+            <Alert color="info">
+              Designed & Developed by Prateek Dutta, Supported by Krashank Harfore & Raj Varu
+            </Alert>
           </Col>
         </Row>
       </Container>
